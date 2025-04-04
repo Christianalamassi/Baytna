@@ -5,4 +5,6 @@ from django.http import HttpResponse
 
 
 def home(request):
+    if request == "POST":
+        text 
     return render(request, ('base.html'))
