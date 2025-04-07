@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,10 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-ijosse)t3+@7*3=_e)60pzi1a_dx13)bm3**77w!94$bwd&u=i"
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# To recognize this as a trusted origin, especially for secure POST requests like logging in.
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-christianalamassi-baytna-5hiyrl8gpf.app.codeanywhere.com',
+]
 
-ALLOWED_HOSTS = ['8000-christianalamassi-baytna-5hiyrl8gpf.app.codeanywhere.com']
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = ['8000-christianalamassi-baytna-5hiyrl8gpf.app.codeanywhere.com', 'localhost','127.0.0.1']
 
 
 # Application definition
@@ -37,7 +43,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "app",
+    "aktuelles",
+    "programs",
+    "contacts",
 ]
 
 MIDDLEWARE = [
@@ -55,7 +63,7 @@ ROOT_URLCONF = "project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates'],
+        "DIRS": [os.path.join(BASE_DIR / 'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
