@@ -29,7 +29,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-christianalamassi-baytna-5hiyrl8gpf.app.codeanywhere.com', 'localhost','127.0.0.1']
 
