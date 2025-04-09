@@ -114,9 +114,12 @@
                 {% for aktuelle in aktuelles %}
 
                 <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">{{aktuelle.date}}</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">{{aktuelle.text}}</p></div>
+                    <div class="col-lg-3 ms-auto"><p class="lead">{{aktuelle.date}}</p></div>
+                    <div class="col-lg-6 me-auto"><p class="lead">{{aktuelle.text}}</p></div>
                 </div>
+                {% empty%}
+                <div class="col-lg-10 ms-auto"><p class="lead">No data is available</p></div>
+
                 {% endfor %}
 
                 <!-- News Section Button-->
@@ -141,10 +144,17 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Events Section Content-->
+                 {% for program in programs %}
                 <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">###########</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">###########</p></div>
+                    <div class="col-lg-4 ms-auto"><p class="lead">{{program.title}}</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">{{program.when_starts}}</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">{{program.when_at}}</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">{{program.description}}</p></div>
                 </div>
+                {% empty%}
+                <div class="col-lg-10 ms-auto"><p class="lead">No data is available</p></div>
+
+                {% endfor %}
                 <!-- Events Section Button-->
                 <!-- <div class="text-center mt-4">
                     <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
