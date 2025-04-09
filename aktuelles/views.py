@@ -1,10 +1,18 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from .models import Aktuelle
 
 # Create your views here.
 
 
 @csrf_exempt
-def home(request):
-    return render(request, ('..templates/base.html'))
+def aktuelle(request):
+    aktuelles = Aktuelle.objects.all()
+    context = {
+        "aktuelles":aktuelles,
+    }
+    return render(request, 'base.html', context)
+
+
+def test_view(request):
+    return render(request, 'base.html', {'test': 'It works!'})

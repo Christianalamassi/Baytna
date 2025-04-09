@@ -10861,7 +10861,7 @@ html {
   margin-left: 1rem;
 }
 .divider-custom .divider-custom-icon {
-  color: #2c3e50;
+  color: #000 !important;
   font-size: 2rem;
 }
 .divider-custom.divider-light .divider-custom-line {
