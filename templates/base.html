@@ -145,18 +145,27 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Events Section Content-->
-                 {% for program in programs %}
-                <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">{{program.img}}</p></div>
-                    <div class="col-lg-4 ms-auto"><p class="lead">{{program.title}}</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">{{program.when_starts}}</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">{{program.when_at}}</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">{{program.description}}</p></div>
+                <div class="raw">
+                    {% for program in programs %}
+                        <div class="col-md-12 mb-4">
+                            <div class="card text-white h-100">
+                                <div class="card-body">
+                                    {% if program.img%}
+                                    <img src="{{program.img.url}}" alt="Event Image" class="img-fluid" style="max-width: 200pc; max-height:200px; border-radius: 8px;">
+                                    {% else %}
+                                    <img src="/static/assets/noimage.png" alt="Event Image" class="img-fluid" style="max-width: 180px; border-radius: 8px;">
+                                    {% endif %}
+                                    <div class="col-lg-5 ms-auto"><p class="lead" style="font-weight: 900; font-size: x-large;"><strong>{{ program.title }}</strong></p></div>
+                                    <div class="col-lg-auto me-auto"><p class="lead">ab {{program.when_starts}}</p></div>
+                                    <div class="col-lg-auto me-auto"><p class="lead">{{program.when_at}}</p></div>
+                                    <div class="col-lg-auto me-auto "><p class="lead">{{program.description}}</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    {% empty%}
+                    <div class="col-lg-10 ms-auto"><p class="lead">No data is available</p></div>
+                    {% endfor %}
                 </div>
-                {% empty%}
-                <div class="col-lg-10 ms-auto"><p class="lead">No data is available</p></div>
-
-                {% endfor %}
                 <!-- Events Section Button-->
                 <!-- <div class="text-center mt-4">
                     <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
@@ -245,7 +254,7 @@
                             <!-- an error submitting the form-->
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
-                            <button style="background-color: #99700a; color: #fff;" class="btn btn-xl" id="submitButton" type="submit">Send</button>
+                            <button style="background-color: #EDDEB9; color: #545353;" class="btn btn-xl" id="submitButton" type="submit">Send</button>
                         </form>
                     </div>
                 </div>
