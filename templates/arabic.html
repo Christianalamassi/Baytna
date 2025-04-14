@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="de">
+<html lang="ar">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -28,12 +28,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#home">Startseite</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#news">aktuelle</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#events">Programme</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Kontakt</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#home">الرئيسية</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#news">الأخبار</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#events">الفعاليات</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">اتصل بنا</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Homepage' %}">Deutsch</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'english' %}">English</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'arabic' %}">عربي</a></li>
                     </ul>
                 </div>
             </div>
@@ -83,15 +83,17 @@
                         <div class="portfolio-item mx-auto">
                             <h4 style="color: #99700a;">BAYTNA - BAYTKUM</h4>
                             <p>
-                                Herzlich Willkommen! Fühlt Euch hier zu Hause!<br>
-                                Baytna baytkum ist Arabisch und bedeutet "Unser Haus ist Euer Haus." Jeder soll sich im Baytna wohlfühlen.<br>
+                                أهلاً وسهلاً! اشعر وكأنك في بيتك".<br>
                             
-                                Das Baytna ist ein Projekt vom Verein HOPE<a href="https://www.hope-ev.org/home/" target="_blank"
-                                    style="color: #99700a;"> HOPE e.V. </a>und wurde 2025 in Berlin-Kreuzberg gegründet. Wir bieten Gruppen, Kurse
-                                und Veranstaltungen für Männer, Frauen, Kinder und Familien an.<br>
+                                ينبغي أن يشعر الجميع بالراحة في بيتنا.<br>
                             
-                                Wir wollen, dass Menschen jeder Herkunft, die in Berlin leben, sich in der Stadt auch zu Hause fühlen.<br> 
-                                Aus verschiedenen Kulturen kommend wollen wir gemeinsam Neues lernen, Freunde finden und Gemeinschaft leben.
+                                بيتنا مشروعٌ لجمعية <a href="https://www.hope-ev.org/home/" target="_blank" style="color: #99700a;"> HOPE e.V. </a>التي تأسست عام ٢٠٢٥ في برلين-كرويتسبرغ.<br>
+                            
+                                نقدم مجموعات ودورات وفعاليات للرجال والنساء والأطفال والعائلات.<br>
+                            
+                                هدفنا هو أن يشعر سكان برلين من جميع الخلفيات الثقافية وكأنهم في بيتهم.<br>
+                            
+                                بصفتنا أشخاصاً من ثقافات مختلفة، نرغب في تعلم أشياء جديدة معاً، وتكوين صداقات، وبناء روح الجماعة.
                             </p>
                         </div>
                     </div>
@@ -104,7 +106,7 @@
         <section class="page-section text-white mb-0" id="news">
             <div class="container">
                 <!-- News Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">aktuelle</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-white">الأخبار</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -112,7 +114,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- News Section Content-->
-                {% for aktuelle in aktuelles %}
+                {% for aktuelle in aktuellesArabic %}
 
                 <div class="raw">
                     <div style="word-wrap:break-word">
@@ -140,7 +142,7 @@
          <section class="page-section text-white mb-0" id="events">
             <div class="container">
                 <!-- Events Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">Programme</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-white">الفعاليات</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -149,7 +151,7 @@
                 </div>
                 <!-- Events Section Content-->
                 <div class="raw">
-                    {% for program in programs %}
+                    {% for program in programsArabic %}
                         <div class="col-md-12 mb-4">
                             <div class="card text-white h-100">
                                 <div class="card-body">
@@ -198,7 +200,7 @@
                     </div>
                 {% endif %}
                 <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">Kontakt</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-white">اتصل بنا</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -221,20 +223,20 @@
                              
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." data-sb-validations="required" required />
-                                <label for="name">Vollständiger Name</label>
+                                <label for="name">الاسم الكامل</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" required />
-                                <label for="email">E-Mail-Adresse</label>
+                                <label for="email">عنوان البريد الإلكتروني</label>
                                 <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                 <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                             </div>
                             <!-- Message input-->
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="message" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" required></textarea>
-                                <label for="message">Nachricht</label>
+                                <label for="message">الرسالة</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                             </div>
                             <!-- Submit success message-->
@@ -257,7 +259,7 @@
                             <!-- an error submitting the form-->
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
-                            <button style="background-color: #EDDEB9; color: #545353;" class="btn btn-xl" id="submitButton" type="submit">Schicken</button>
+                            <button style="background-color: #EDDEB9; color: #545353;" class="btn btn-xl" id="submitButton" type="submit">إرسال</button>
                         </form>
                     </div>
                 </div>
@@ -269,16 +271,16 @@
                 <div class="row">
                     <!-- Footer Location-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Standort</h4>
+                        <h4 class="text-uppercase mb-4">الموقع</h4>
                         <p class="lead mb-0">
                             Baytna Begegnungszentrum <br>
-                            Dieffenbachstraße 69 (Hinterhaus)<br>
+                            Dieffenbachstraße 69 (المبنى الخلفي)<br>
                             10967 Berlin
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Im Internet</h4>
+                        <h4 class="text-uppercase mb-4">حول الويب</h4>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
@@ -286,10 +288,9 @@
                     </div>
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">Über uns</h4>
+                        <h4 class="text-uppercase mb-4">نبذة عنا</h4>
                         <p class="lead mb-0">
-                            Baytna baytkum ist Arabisch und bedeutet "Unser Haus ist Euer Haus."
-                            Jeder soll sich im Baytna wohlfühlen. 
+                            "بيتنا بيتكم" يجب أن يشعر الجميع بالراحة في بيتنا.
                         </p>
                     </div>
                 </div>

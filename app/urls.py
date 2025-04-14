@@ -4,5 +4,7 @@ from . import views
 
 
 urlpatterns = [
-    path("", views.home, name="Homepage")
+    path("", views.home, name="Homepage"),
+    path('english', views.english, name="english"),
+    path('arabic', views.arabic, name="arabic"),
 ]
