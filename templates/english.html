@@ -32,8 +32,11 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#news">News</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#events">Events</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Homepage' %}">Deutch</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'arabic' %}">عربي</a></li>
+                        <select id="language-select">
+                            <option value="" disabled selected>DE/ع_ر</option>
+                            <option class="nav-item mx-0 mx-lg-1" value="{% url 'Homepage' %}">DE</option>
+                            <option class="nav-item mx-0 mx-lg-1" value="{% url 'arabic' %}">عربي</a</option>
+                        </select>
                     </ul>
                 </div>
             </div>
@@ -509,6 +512,15 @@
                     alert.style.display = 'none';
                 }
             }, 5000);
+        </script>
+         <!-- for dropdown language -->
+         <script>
+            document.getElementById("language-select").addEventListener("change", function () {
+                var selectedUrl = this.value;
+                if (selectedUrl) {
+                    window.location.href = selectedUrl;
+                }
+            });
         </script>
     </body>
 </html>

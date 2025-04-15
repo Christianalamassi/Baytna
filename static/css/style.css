@@ -9647,8 +9647,8 @@ textarea.form-control-lg {
     padding-left: 0.5rem !important;
   }
   .px-lg-3 {
-    padding-right: 1rem !important;
-    padding-left: 1rem !important;
+    padding-right: 0.6rem !important;
+    padding-left: 0.6rem !important;
   }
   .px-lg-4 {
     padding-right: 1.5rem !important;
@@ -11045,4 +11045,18 @@ html {
 
 .copyright {
   background-color: #8d9093;
+}
+
+/* codes */
+.btn-xl:hover{
+  background-color: #d5c29d !important;
+  color: #2e2e2e;
+}
+#language-select {
+  max-width: 300px;
+  width: 100%;
+  padding: 6px;
+  margin: 10px 0px 40px;
+  font-size: 1rem;
+  color: #000;
 }

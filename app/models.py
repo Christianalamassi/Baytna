@@ -6,6 +6,9 @@ class Aktuelle(models.Model):
     date = models.DateField(blank=False, null=True)
     text = models.TextField(max_length=5800, blank=False)
 
+    class Meta:
+        verbose_name = "News German"
+    
     def __str__(self):
         return f"{self.date}"
     
@@ -17,12 +20,19 @@ class Program(models.Model):
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
     description = models.TextField(max_length=2000, blank=True)
 
+    class Meta:
+        verbose_name = "Program German"
+
     def __str__(self):
         return f"{self.title}, {self.when_starts}, {self.when_at}"
-    
+
+
 class AktuelleEnglish(models.Model):
     date = models.DateField(blank=False, null=True)
     text = models.TextField(max_length=5800, blank=False)
+
+    class Meta:
+        verbose_name = "News English"
 
     def __str__(self):
         return f"{self.date}"
@@ -35,12 +45,19 @@ class ProgramEnglish(models.Model):
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
     description = models.TextField(max_length=2000, blank=True)
 
+    class Meta:
+        verbose_name="Program English"
+
     def __str__(self):
         return f"{self.title}, {self.when_starts}, {self.when_at}"
-    
+
+
 class AktuelleArabic(models.Model):
     date = models.DateField(blank=False, null=True)
     text = models.TextField(max_length=5800, blank=False)
+
+    class Meta:
+        verbose_name="News Arabic"
 
     def __str__(self):
         return f"{self.date}"
@@ -53,6 +70,9 @@ class ProgramArabic(models.Model):
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
     description = models.TextField(max_length=2000, blank=True)
 
+    class Meta:
+        verbose_name = "Program Arabic"
+    
     def __str__(self):
         return f"{self.title}, {self.when_starts}, {self.when_at}"
     

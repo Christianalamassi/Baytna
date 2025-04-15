@@ -32,8 +32,11 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#news">الأخبار</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#events">الفعاليات</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">اتصل بنا</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Homepage' %}">Deutsch</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'english' %}">English</a></li>
+                        <select id="language-select">
+                            <option value="" disabled selected>DE/EN</option>
+                            <option class="nav-item mx-0 mx-lg-1" value="{% url 'Homepage' %}">DE</a</option>
+                            <option class="nav-item mx-0 mx-lg-1" value="{% url 'english' %}">EN</option>
+                        </select>
                     </ul>
                 </div>
             </div>
@@ -124,7 +127,7 @@
                     </div>
                 </div>
                 {% empty%}
-                <div class="col-lg-10 ms-auto"><p class="lead">No data is available</p></div>
+                <div class="col-lg-10 ms-auto"><p class="lead">لا توجد بيانات متاحة</p></div>
 
                 {% endfor %}
 
@@ -168,7 +171,7 @@
                             </div>
                         </div>
                     {% empty%}
-                    <div class="col-lg-10 ms-auto"><p class="lead">No data is available</p></div>
+                    <div class="col-lg-10 ms-auto"><p class="lead">لا توجد بيانات متاحة</p></div>
                     {% endfor %}
                 </div>
                 <!-- Events Section Button-->
@@ -511,6 +514,15 @@
                     alert.style.display = 'none';
                 }
             }, 5000);
+        </script>
+         <!-- for dropdown language -->
+         <script>
+            document.getElementById("language-select").addEventListener("change", function () {
+                var selectedUrl = this.value;
+                if (selectedUrl) {
+                    window.location.href = selectedUrl;
+                }
+            });
         </script>
     </body>
 </html>
