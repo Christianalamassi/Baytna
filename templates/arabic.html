@@ -32,11 +32,13 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#news">الأخبار</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#events">الفعاليات</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">اتصل بنا</a></li>
-                        <select id="language-select">
-                            <option value="" disabled selected>DE/EN</option>
-                            <option class="nav-item mx-0 mx-lg-1" value="{% url 'Homepage' %}">DE</a</option>
-                            <option class="nav-item mx-0 mx-lg-1" value="{% url 'english' %}">EN</option>
-                        </select>
+                        <li class="nav-item mx-0 mx-lg-1 language-dropdown">
+                            <button class="language-btn"> <i class="fas fa-globe" style="color: #000;"></i></button>
+                            <div class="language-menu">
+                                <a href="{% url 'Homepage' %}">DE</a>
+                                <a href="{% url 'english' %}">EN</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -242,6 +244,15 @@
                                 <label for="message">الرسالة</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                             </div>
+                            <!-- agreement statement -->
+                            <div style="display:flex; align-items:center; gap:12px;">
+                                <input type="checkbox" id="agreement" required>
+                                <label for="agreement">
+                                    أوافق على تخزين هذه البيانات ومعالجتها لغرض الاتصال بي. أنا على علم بأنه يمكنني سحب موافقتي في أي وقت. يتم تحديد
+                                    الحقول المطلوبة
+                                </label>
+                            </div>
+                            <br>
                             <!-- Submit success message-->
                             <!---->
                             <!-- This is what your users will see when the form-->
@@ -514,15 +525,6 @@
                     alert.style.display = 'none';
                 }
             }, 5000);
-        </script>
-         <!-- for dropdown language -->
-         <script>
-            document.getElementById("language-select").addEventListener("change", function () {
-                var selectedUrl = this.value;
-                if (selectedUrl) {
-                    window.location.href = selectedUrl;
-                }
-            });
         </script>
     </body>
 </html>
