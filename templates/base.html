@@ -520,11 +520,93 @@
             </div>
         </div>
         <!-- Cookie Consent Banner -->
-        <div id="cookie-consent-banner"
-            style="position:fixed;bottom:0;width:100%;background:#f9f9f9;padding:15px;text-align:center;z-index:999;">
-            <span>We use cookies to improve your experience. By clicking "Accept", you agree to our use of non-essential
-                cookies. <a href="/privacy-policy">Learn more</a>.</span>
-            <button style="background-color: #EDDEB9; color: #545353;" class="btn btn-xl" id="submitButton" onclick="acceptCookies()" style="margin-left: 10px;">Accept</button>
+        <div style=" position: fixed; bottom: 0; left: 0; right: 0; background: #333; color: white; padding: 10px; text-align: center; display: none;"
+            id="cookie-consent"> We use cookies to improve your experience. By clicking "Accept", you agree to our use of essential
+            cookies. 
+            <button
+                style="background-color: #EDDEB9; color: #545353; padding:5px;"
+                id="accept-cookies" class="btn btn-xl" >Accept
+            </button> 
+            <a href="#" id="learn-more" style="color: #EDDEB9; padding-left:10px;">Learn more</a>.</span>
+        </div>
+
+        <div id="cookies">
+            <p style="text-align:justify;">
+                <span>Datenschutzrichtlinie für BAYTNA,</span><br><br>
+                <b>Gültig ab: [Datum einfügen]</b><br>
+                BAYTNA, erreichbar über [Website-URL einfügen], verpflichtet sich zum Schutz Ihrer
+                personenbezogenen Daten und Ihrer Privatsphäre. Bei Fragen oder Bedenken zu dieser Datenschutzerklärung oder
+                unseren Praktiken im Zusammenhang mit Ihren personenbezogenen Daten kontaktieren Sie uns bitte unter
+                [E-Mail-Adresse einfügen].<br><br>
+
+                <b>Erhobene Daten</b><br>
+                Wir erfassen möglicherweise personenbezogene Daten, die Sie uns bei der Registrierung auf unserer Website, beim
+                Abonnieren unseres Newsletters oder bei der Kontaktaufnahme mitteilen. Zu den personenbezogenen Daten, die wir
+                erfassen können, gehören:<br>
+                Vorname<br>
+                E-Mail-Adresse<br><br>
+        
+                <b>Wie wir Ihre Daten verwenden</b><br>
+        
+                Wir verwenden die erfassten Daten wie folgt:<br>
+
+                1- Zur Bereitstellung, zum Betrieb und zur Wartung unserer Website.<br>
+        
+                2- Zur Verbesserung, Personalisierung und Erweiterung unserer Website.<br>
+        
+                3- Um zu verstehen und zu analysieren, wie Sie unsere Website nutzen.<br>
+        
+                4- Um mit Ihnen direkt oder über einen unserer Partner zu kommunizieren, unter anderem für den Kundenservice, um
+                Ihnen Updates und andere Informationen zur Website zukommen zu lassen, sowie für Marketing- und Werbezwecke.<br><br>
+        
+                <b>Rechtsgrundlage für die Verarbeitung personenbezogener Daten gemäß DSGVO</b><br>
+        
+                Wenn Sie im Europäischen Wirtschaftsraum (EWR) ansässig sind, hängt die Rechtsgrundlage von BAYTNA für die
+                Erhebung und Verwendung der in dieser Datenschutzerklärung beschriebenen personenbezogenen Daten von den von uns
+                erhobenen Daten und dem Kontext der Erhebung ab. Wir können Ihre personenbezogenen Daten verarbeiten, weil:<br>
+                1- Wir einen Vertrag mit Ihnen abschließen müssen.<br>
+                2- Sie uns Ihre Einwilligung hierzu erteilt haben.<br>
+                3- Die Verarbeitung liegt in unserem berechtigten Interesse und wird nicht durch Ihre Rechte außer Kraft gesetzt.<br>
+                4- Um gesetzliche Vorschriften einzuhalten.<br><br>
+        
+                <b>Aufbewahrung Ihrer Daten</b><br>
+        
+                Wir speichern Ihre personenbezogenen Daten nur so lange, wie es für die in dieser Datenschutzerklärung genannten
+                Zwecke erforderlich ist. Wir speichern und verwenden Ihre Daten, soweit dies zur Erfüllung unserer gesetzlichen
+                Verpflichtungen, zur Beilegung von Streitigkeiten und zur Durchsetzung unserer Richtlinien erforderlich ist.<br><br>
+
+                <b>Ihre Datenschutzrechte gemäß DSGVO</b><br>
+        
+                Wenn Sie im Europäischen Wirtschaftsraum (EWR) ansässig sind, haben Sie bestimmte Datenschutzrechte. BAYTNA ist
+                bestrebt, angemessene Maßnahmen zu ergreifen, um Ihnen die Berichtigung, Änderung, Löschung oder Einschränkung
+                der Nutzung Ihrer personenbezogenen Daten zu ermöglichen. Wenn Sie darüber informiert werden möchten, welche
+                personenbezogenen Daten wir über Sie gespeichert haben und ob diese aus unseren Systemen gelöscht werden sollen,
+                kontaktieren Sie uns bitte. Unter bestimmten Umständen haben Sie folgende Datenschutzrechte:<br>
+
+                1- Das Recht auf Zugriff, Aktualisierung oder Löschung Ihrer bei uns gespeicherten Daten.<br>
+                2- Das Recht auf Berichtigung.<br>
+                3- Das Recht auf Widerspruch.<br>
+                4- Das Recht auf Einschränkung.<br>
+                5- Das Recht auf Datenübertragbarkeit.<br>
+                6- Das Recht auf Widerruf der Einwilligung.<br><br>
+        
+                <b>Sicherheit Ihrer Daten</b><br>
+                Wir setzen administrative, technische und physische Sicherheitsmaßnahmen ein, um Ihre personenbezogenen Daten zu
+                schützen. Obwohl wir angemessene Maßnahmen zum Schutz der von Ihnen bereitgestellten personenbezogenen Daten
+                ergriffen haben, beachten Sie bitte, dass keine Methode der Internetübertragung oder elektronischen Speicherung
+                100 % sicher ist und wir keine absolute Sicherheit garantieren können.<br><br>
+
+                <b>Änderungen dieser Datenschutzrichtlinie</b><br>
+                Wir behalten uns das Recht vor, unsere Datenschutzrichtlinie von Zeit zu Zeit zu aktualisieren. Wir informieren
+                Sie über Änderungen, indem wir die neue Datenschutzrichtlinie auf dieser Seite veröffentlichen. Wir empfehlen
+                Ihnen, diese Datenschutzrichtlinie regelmäßig auf Änderungen zu überprüfen. Änderungen dieser
+                Datenschutzrichtlinie treten mit ihrer Veröffentlichung auf dieser Seite in Kraft.
+            </p>
+            <button id="close-modal">X</button>
+        </div>
+        <!-- Background overlay -->
+        <div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                background: rgba(0, 0, 0, 0.5); z-index: 999;">
         </div>
 
 
@@ -548,35 +630,58 @@
         </script>
         <!-- Cookie Consent Banner -->
         <script>
-            function acceptCookies() {
-                document.getElementById("cookie-consent-banner").style.display = "none";
+              window.onload = function() {        
+                if (!getCookie('cookieConsent')) {            
+                    document.getElementById('cookie-consent').style.display = 'block';     
+                    document.getElementById('cookie-consent').style.zIndex = '1001';
+                    document.getElementById('mainNav').style.zIndex = '998';
+                    document.getElementById("overlay").style.display = "block";
+                }};
 
-                // Set cookie for 1 year
-                const date = new Date();
-                date.setFullYear(date.getFullYear() + 1);
-                document.cookie = "cookie_consent=true; expires=" + date.toUTCString() + "; path=/";
+                document.getElementById('accept-cookies').onclick = function() {        
+                    setCookie('cookieConsent', 'accepted', 30);        
+                    document.getElementById('cookie-consent').style.display = 'none';    
+                };
 
-                // Optionally trigger analytics setup or any non-essential scripts
-                enableAnalytics();
-            }
+                document.getElementById('accept-cookies').onclick = function() {        
+                    setCookie('cookieConsent', 'accepted', 30);        
+                    document.getElementById('cookie-consent').style.display = 'none';
+                    document.getElementById('overlay').style.display= 'none'    
+                };
 
-            function hasCookieConsent() {
-                return document.cookie.split(';').some(c => c.trim().startsWith('cookie_consent='));
-            }
-
-            function enableAnalytics() {
-                // Example: Google Analytics initialization (only if consented)
-                console.log("Analytics enabled");
-                // Your analytics setup code here
-            }
-
-            // On page load
-            window.onload = function () {
-                if (hasCookieConsent()) {
-                    document.getElementById("cookie-consent-banner").style.display = "none";
-                    enableAnalytics();
+                function setCookie(name, value, days) {        
+                    var expires = "";        if (days) {            
+                        var date = new Date();            
+                        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));            
+                        expires = "; expires=" + date.toUTCString();        
+                    }        
+                    document.cookie = name + "=" + (value || "") + expires + "; path=/";    
                 }
-            };
+
+                function getCookie(name) {        
+                    var nameEQ = name + "=";        
+                    var ca = document.cookie.split(';');        
+                    for (var i = 0; i < ca.length; i++) {            
+                        var c = ca[i];            
+                        while (c.charAt(0) === ' ') c = c.substring(1, c.length);            
+                        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);        
+                    }        
+                return null;    
+            }
+        </script>
+        <!-- Cookie Consent Banner paragraph-->
+        <script>
+            document.getElementById("")
+            document.getElementById("learn-more").addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent default link behavior
+                    document.getElementById("cookies").style.display = "block";
+                    document.getElementById("overlay").style.display = "block";
+                });
+
+                document.getElementById("close-modal").addEventListener("click", function () {
+                    document.getElementById("cookies").style.display = "none";
+                });
+
         </script>
     </body>
 </html>

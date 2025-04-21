@@ -8,6 +8,7 @@ from .models import Aktuelle, Program, AktuelleEnglish, ProgramEnglish, Aktuelle
 def home(request):
     aktuelles = Aktuelle.objects.all()
     programs = Program.objects.all()
+    cookie_consent = request.COOKIES.get('cookieConsent', None)
 
     if request.method == "POST":
         name = request.POST.get('name')
@@ -23,6 +24,7 @@ def home(request):
     context = {
         "aktuelles":aktuelles,
         "programs":programs,
+        "cookie_consent":cookie_consent,
     }
     return render(request, 'base.html', context)
 
