@@ -31,7 +31,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG")
+DEBUG = os.getenv("DEBUG", "False").lower() in ('true', "1", "yes")
 
 ALLOWED_HOSTS = [
     '8000-christianalamassi-baytna-5hiyrl8gpf.app.codeanywhere.com', 
