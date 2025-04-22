@@ -33,7 +33,11 @@ CSRF_TRUSTED_ORIGINS = [
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = ['8000-christianalamassi-baytna-5hiyrl8gpf.app.codeanywhere.com', 'localhost','127.0.0.1']
+ALLOWED_HOSTS = [
+    '8000-christianalamassi-baytna-5hiyrl8gpf.app.codeanywhere.com', 
+    'localhost','127.0.0.1', 
+    "https://railway.com/project/9fa34c14-7850-45ec-a8cd-dd903d22f346?environmentId=0d2bc24d-e47a-48c3-8a31-64ad8e5715e3"
+    ]
 
 
 # Application definition
