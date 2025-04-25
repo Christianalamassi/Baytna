@@ -29,17 +29,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # To recognize this as a trusted origin, especially for secure POST requests like logging in.
-CSRF_TRUSTED_ORIGINS = [
-    'https://8000-christianalamassi-baytna-5hiyrl8gpf.app.codeanywhere.com',
-]
+CSRF_TRUSTED_ORIGINS = ['https://baytna-berlin.de']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False").lower() in ('true', "1", "yes")
 
 ALLOWED_HOSTS = [
-    '8000-christianalamassi-baytna-5hiyrl8gpf.app.codeanywhere.com', 
-    'localhost','127.0.0.1', 
-    "https://railway.com/project/9fa34c14-7850-45ec-a8cd-dd903d22f346?environmentId=0d2bc24d-e47a-48c3-8a31-64ad8e5715e3"
+    '*'
     ]
 
 
