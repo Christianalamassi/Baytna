@@ -29,13 +29,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # To recognize this as a trusted origin, especially for secure POST requests like logging in.
-CSRF_TRUSTED_ORIGINS = ['https://baytna-berlin.de']
+CSRF_TRUSTED_ORIGINS = ['https://baytna-production.up.railway.app']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False").lower() in ('true', "1", "yes")
 
 ALLOWED_HOSTS = [
-    '*'
+    'baytna-production.up.railway.app'
     ]
 
 
