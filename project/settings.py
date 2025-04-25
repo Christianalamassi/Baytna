@@ -35,7 +35,7 @@ CSRF_TRUSTED_ORIGINS = ['https://baytna-production.up.railway.app']
 DEBUG = os.getenv("DEBUG", "False").lower() in ('true', "1", "yes")
 
 ALLOWED_HOSTS = [
-    'baytna-production.up.railway.app'
+    '127.0.0.1', 'baytna-production.up.railway.app'
     ]
 
 
@@ -66,7 +66,7 @@ ROOT_URLCONF = "project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR / 'templates')],
+        "DIRS": [BASE_DIR / 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
