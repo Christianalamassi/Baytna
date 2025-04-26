@@ -6,4 +6,5 @@ Family Center
 - pip3 install pillow
 - pip install python-decouple
 - pip install python-dotenv
+- pip install whitenoise
 
