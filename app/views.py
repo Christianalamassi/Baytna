@@ -19,7 +19,7 @@ def home(request):
         if name and email and message:
             Contact.objects.create(name=name, email=email, message=message)
             messages.success(request, 'Ihre Nachricht wurde erfolgreich übermittelt!')
-            return redirect('/')
+            return redirect('/#contact')
 
     context = {
         "aktuelles":aktuelles,
@@ -43,7 +43,7 @@ def english(request):
         if name and email and message:
             Contact.objects.create(name=name, email=email, message=message)
             messages.success(request, 'Your message was submitted successfully!')
-            return redirect('/english')
+            return redirect('/english#contact')
 
     context = {
         "aktuellesEnglish":aktuellesEnglish,
@@ -66,7 +66,7 @@ def arabic(request):
         if name and email and message:
             Contact.objects.create(name=name, email=email, message=message)
             messages.success(request, '!تم إرسال رسالتك بنجاح')
-            return redirect('/arabic')
+            return redirect('/arabic#contact')
 
     context = {
         "aktuellesArabic":aktuellesArabic,
