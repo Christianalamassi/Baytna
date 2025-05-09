@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link rel="stylesheet" tayp='text/css' href= "{% static 'css/style.css' %}" />
+        <link rel="stylesheet" type='text/css' href= "{% static 'css/style.css' %}" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -33,6 +33,7 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#news">aktuelles</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#events">Angebote</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Kontakt</a></li>
+                        <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/templates/datenschutzerklärung.html">datenschutzerklärung</a></li> -->
                         <li class="nav-item mx-0 mx-lg-1 language-dropdown">
                             <button class="language-btn"> <i class="fas fa-globe" style="color: #000;"></i></button>
                             <div class="language-menu">
@@ -233,20 +234,20 @@
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." data-sb-validations="required" required />
                                 <label for="name">Vollständiger Name</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">Ein Name ist erforderlich.</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" required />
                                 <label for="email">E-Mail-Adresse</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">Eine E-Mail-Adresse ist erforderlich.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Die E-Mail-Adresse ist ungültig.</div>
                             </div>
                             <!-- Message input-->
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="message" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" required></textarea>
                                 <label for="message">Nachricht</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">Eine Nachricht ist erforderlich.</div>
                             </div>
                             <!-- agreement statement -->
                             <div style="display:flex; align-items:center; gap:12px;">
@@ -300,10 +301,20 @@
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">sozialen Medien</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.instagram.com/baytna_berlin/?igsh=MWJ3czdzNGlrbmYxZQ%3D%3D#"><i class="fa-brands fa-instagram"></i><a>
-                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.facebook.com/share/1A3eGGnE4k/"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="#!"><i class="fa-solid fa-envelope"></i></a>
+                        <div class="d-flex justify-content-center mb-3">
+                            <a class="btn btn-outline-light btn-social mx-1" target="_blank"
+                                href="https://www.instagram.com/baytna_berlin/?igsh=MWJ3czdzNGlrbmYxZQ%3D%3D#"><i
+                                    class="fa-brands fa-instagram"></i><a>
+                                    <a class="btn btn-outline-light btn-social mx-1" target="_blank"
+                                        href="https://www.facebook.com/share/1A3eGGnE4k/"><i class="fab fa-fw fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="#!"><i
+                                            class="fa-solid fa-envelope"></i></a>
+                        </div>
+                        <div>
+                            <a class="btn btn-sm btn-outline-light" href="/impressum" style="margin-top:5vh;">Impressum</a>
+                        </div>
                     </div>
+                    
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
                         <h4 class="text-uppercase mb-4">Über uns</h4>
@@ -681,7 +692,6 @@
                 document.getElementById("close-modal").addEventListener("click", function () {
                     document.getElementById("cookies").style.display = "none";
                 });
-
         </script>
     </body>
 </html>

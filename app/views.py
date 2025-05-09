@@ -73,3 +73,15 @@ def arabic(request):
         "programsArabic":programsArabic,
     }
     return render(request, 'arabic.html', context)
+
+
+def impressum(request):
+    return render(request, 'impressum.html')
+
+
+def impressum_english(request):
+    return render(request, 'impressum_english.html')
+
+
+def impressum_arabic(request):
+    return render(request, 'impressum_arabic.html')
