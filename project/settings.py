@@ -38,7 +38,7 @@ DEBUG = os.getenv("DEBUG", "False").lower() in ('true', "1", "yes")
 ALLOWED_HOSTS = [
     'web-production-d37ff.up.railway.app',
     'www.baytna-berlin.de', 
-    # '127.0.0.1'
+    '127.0.0.1'
     ]
 
 

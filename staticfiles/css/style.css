@@ -11109,7 +11109,7 @@ html {
 @media (max-width:991px){
   .language-menu {
     right: auto;         /* Remove right alignment */
-    left: 0%;           /* Center it horizontally */
+    left: 5%;           /* Center it horizontally */
     transform: translateX(-50%); /* Shift back by half width to center */
     top: 100%;           /* Position it directly below the button */
     margin-top: 0.5rem;  /* Some spacing from the icon */
@@ -11149,7 +11149,7 @@ html {
 #cookies{
   display: none;
   position:fixed;
-  top: 50%;
+  top: 45%;
   left:50%;
   transform: translate(-50%, -50%);
   background: white; 
