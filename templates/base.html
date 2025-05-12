@@ -126,8 +126,19 @@
 
                 <div class="raw">
                     <div style="word-wrap:break-word">
-                        <div class="col-lg-3 ms-3"><p class="lead">{{aktuelle.date}}</p></div>
-                        <div class="col-lg-6 me-6"><p class="lead">{{aktuelle.text}}</p></div>
+                        {% if aktuelle.img%}
+                        <img src="{{aktuelle.img.url}}" alt="Event Image" class="img-fluid mb-3 rounded-circle"
+                            style="width: 250px; height: 250px; object-fit: cover;">
+                        {% else %}
+                        <img src="/static/assets/noimage.png" alt="Event Image" class="img-fluid mb-3 rounded-circle"
+                            style="width: 250px; height: 250px; object-fit: cover;">
+                        {% endif %}
+                        <div class="col-lg-6 ms-6">
+                            <p class="lead" data-date="{{ aktuelle.date|date:'c' }}"></p>
+                        </div>
+                        <div class="col-lg-6 me-6">
+                            <p class="lead">{{aktuelle.text}}</p>
+                        </div>
                         <hr>
                     </div>
                 </div>
@@ -693,5 +704,17 @@
                     document.getElementById("cookies").style.display = "none";
                 });
         </script>
+       <script>
+        document.querySelectorAll('[data-date]').forEach(el => {
+            const date = new Date(el.dataset.date);
+            el.textContent = date.toLocaleDateString('de-DE', {
+                day: 'numeric',
+                month: 'long',  // this gives you "Mai" instead of "05"
+                year: 'numeric'
+            });
+        });
+    </script>
+
+
     </body>
 </html>

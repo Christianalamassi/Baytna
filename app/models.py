@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Aktuelle(models.Model):
+    img = models.ImageField(upload_to="aktuelles/", blank=True, null=True)
     date = models.DateField(blank=False, null=True)
     text = models.TextField(max_length=5800, blank=False)
 
@@ -28,6 +29,7 @@ class Program(models.Model):
 
 
 class AktuelleEnglish(models.Model):
+    img = models.ImageField(upload_to="aktuelles/", blank=True, null=True)
     date = models.DateField(blank=False, null=True)
     text = models.TextField(max_length=5800, blank=False)
 
@@ -53,6 +55,7 @@ class ProgramEnglish(models.Model):
 
 
 class AktuelleArabic(models.Model):
+    img = models.ImageField(upload_to="aktuelles/", blank=True, null=True)
     date = models.DateField(blank=False, null=True)
     text = models.TextField(max_length=5800, blank=False)
 

@@ -126,8 +126,19 @@
 
                 <div class="raw">
                     <div style="word-wrap:break-word">
-                        <div class="col-lg-3 ms-3"><p class="lead">{{aktuelle.date}}</p></div>
-                        <div class="col-lg-6 me-6"><p class="lead">{{aktuelle.text}}</p></div>
+                        {% if aktuelle.img%}
+                        <img src="{{aktuelle.img.url}}" alt="Event Image" class="img-fluid mb-3 rounded-circle"
+                            style="width: 250px; height: 250px; object-fit: cover;">
+                        {% else %}
+                        <img src="/static/assets/noimage.png" alt="Event Image" class="img-fluid mb-3 rounded-circle"
+                            style="width: 250px; height: 250px; object-fit: cover;">
+                        {% endif %}
+                        <div class="col-lg-6 ms-6">
+                            <p class="lead">{{aktuelle.date}}</p>
+                        </div>
+                        <div class="col-lg-6 me-6">
+                            <p class="lead">{{aktuelle.text}}</p>
+                        </div>
                         <hr>
                     </div>
                 </div>
@@ -170,7 +181,7 @@
                                 <img src="/static/assets/noimage.png" alt="Event Image" class="img-fluid mb-3 rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
                                 {% endif %}
                                 <p class="lead" style="font-weight: 900; font-size: x-large;"><strong>{{ program.title }}</strong></p>
-                                <p style="font-weight: 900;">ab {{program.when_starts}}</p>
+                                <p style="font-weight: 900;">من {{program.when_starts}}</p>
                                 <p style="font-weight: 900;">{{program.when_at}}</p>
                                 <p>{{program.description}}</p>
                             </div>
