@@ -34,6 +34,8 @@ The design leverages Bootstrap's grid system to ensure a fully responsive experi
 - pip install python-dotenv
 - pip install whitenoise
 - pip install dj-database-url
+- pip install psycopg2-binary 
+
 
 ## 📂 Project Structure
 
