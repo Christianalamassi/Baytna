@@ -129,9 +129,6 @@
                         {% if aktuelle.img%}
                         <img src="{{aktuelle.img.url}}" alt="Event Image" class="img-fluid mb-3 rounded-circle"
                             style="width: 250px; height: 250px; object-fit: cover;">
-                        {% else %}
-                        <img src="/static/assets/noimage.png" alt="Event Image" class="img-fluid mb-3 rounded-circle"
-                            style="width: 250px; height: 250px; object-fit: cover;">
                         {% endif %}
                         <div class="col-lg-6 ms-6">
                             <p class="lead" data-date="{{ aktuelle.date|date:'c' }}"></p>
