@@ -25,7 +25,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("app.urls")),
 ]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-else:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Serve media even when DEBUG=False (not ideal for big files, but fine on Railway)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
