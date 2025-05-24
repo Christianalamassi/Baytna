@@ -1,4 +1,4 @@
-# [Baytna](https://web-production-d37ff.up.railway.app)
+# [Baytna](https://www.baytna-berlin.de/)
 
 Baytna is a dynamic and modern website built for a community center located in Berlin, Germany.  
 It serves as an online hub where visitors can learn about the center's activities, events, and services.
@@ -55,7 +55,7 @@ baytna/
 │   ├── models.py
 │   ├── views.py
 │   └── urls.py
-├── db.sqlite3          # SQLite database
+├── db.sqlite3          # SQLite database "isn't used"
 └── manage.py           # Django's management utility
 ```
 
