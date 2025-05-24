@@ -20,7 +20,7 @@ if os.getenv("RAILWAY_ENVIRONMENT") is None:
     from dotenv import load_dotenv
     load_dotenv()
 
-#To ensure it does mounted volume directory exist
+# To ensure it does mounted volume directory exist
 # media_path = settings.MEDIA_ROOT
 # if not os.path.exists(media_path):
 #     os.makedirs(media_path)
@@ -147,9 +147,16 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
+MEDIA_ROOT = BASE_DIR / 'media'
+
+if not MEDIA_ROOT.exists():
+    MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
