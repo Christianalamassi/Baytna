@@ -145,7 +145,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = Path("/app/media/programs")
+MEDIA_ROOT = Path("/media/")
 
 if not MEDIA_ROOT.exists():
     MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
