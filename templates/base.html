@@ -174,8 +174,7 @@
                                 <div class="card-body">
                                     {% if program.img%}
                                     {% load dropbox_filters %}
-                                    <img src="{{ program.img.url|dropbox_direct_url }}" alt="Event Image" class="img-fluid mb-3 rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
-                                    <p>{{ program.img.url|dropbox_direct_url }}</p>
+                                    <img src="https://www.dropbox.com/scl/fo/c1lkv6n40pl0iriwa5d7w/AIs5frr-fLrtS0r6cJKRuMk?rlkey=rn1m67qckojht4symdsx3cbs0&st=wteum3dg&dl=0{{ program.img.url|dropbox_direct_url }}" alt="Event Image" class="img-fluid mb-3 rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
                                     {% else %}
                                     <img src="/static/assets/noimage.png" alt="Event Image" class="img-fluid mb-3 rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
                                     {% endif %}
