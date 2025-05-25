@@ -14,7 +14,7 @@ class Aktuelle(models.Model):
     
 
 class Program(models.Model):
-    img = models.ImageField(blank=True, null=True)
+    img = models.ImageField(upload_to="https://www.dropbox.com/scl/fo/c1lkv6n40pl0iriwa5d7w/AIs5frr-fLrtS0r6cJKRuMk?rlkey=rn1m67qckojht4symdsx3cbs0&st=evjx2y4t&dl=0", blank=True, null=True)
     title = models.CharField(max_length=80, default="Untitled Program", blank=False)
     when_starts = models.CharField(max_length=80, blank=True)
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
@@ -28,7 +28,6 @@ class Program(models.Model):
 
 
 class AktuelleEnglish(models.Model):
-    img = models.ImageField(upload_to="aktuelles/", blank=True, null=True)
     date = models.DateField(blank=False, null=True)
     text = models.TextField(max_length=5800, blank=False)
 
@@ -40,7 +39,7 @@ class AktuelleEnglish(models.Model):
     
 
 class ProgramEnglish(models.Model):
-    img = models.ImageField(upload_to="programs/", blank=True, null=True)
+    img = models.ImageField(upload_to="https://www.dropbox.com/scl/fo/c1lkv6n40pl0iriwa5d7w/AIs5frr-fLrtS0r6cJKRuMk?rlkey=rn1m67qckojht4symdsx3cbs0&st=evjx2y4t&dl=0", blank=True, null=True)
     title = models.CharField(max_length=80, default="Untitled Program", blank=False)
     when_starts = models.CharField(max_length=80, blank=True)
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
@@ -54,7 +53,6 @@ class ProgramEnglish(models.Model):
 
 
 class AktuelleArabic(models.Model):
-    img = models.ImageField(upload_to="aktuelles/", blank=True, null=True)
     date = models.DateField(blank=False, null=True)
     text = models.TextField(max_length=5800, blank=False)
 
@@ -66,7 +64,7 @@ class AktuelleArabic(models.Model):
     
 
 class ProgramArabic(models.Model):
-    img = models.ImageField(upload_to="programs/", blank=True, null=True)
+    img = models.ImageField(upload_to="https://www.dropbox.com/scl/fo/c1lkv6n40pl0iriwa5d7w/AIs5frr-fLrtS0r6cJKRuMk?rlkey=rn1m67qckojht4symdsx3cbs0&st=evjx2y4t&dl=0", blank=True, null=True)
     title = models.CharField(max_length=80, default="Untitled Program", blank=False)
     when_starts = models.CharField(max_length=80, blank=True)
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
