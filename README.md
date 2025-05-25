@@ -36,7 +36,7 @@ The design leverages Bootstrap's grid system to ensure a fully responsive experi
 - pip install dj-database-url
 - pip install psycopg2-binary 
 - pip install dropbox django-storages
-
+- pip install dropbox
 
 ## 📂 Project Structure
 
