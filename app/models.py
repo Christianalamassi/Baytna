@@ -14,7 +14,7 @@ class Aktuelle(models.Model):
     
 
 class Program(models.Model):
-    img = models.ImageField(upload_to="programs/", blank=True, null=True)
+    img = models.ImageField(blank=True, null=True)
     title = models.CharField(max_length=80, default="Untitled Program", blank=False)
     when_starts = models.CharField(max_length=80, blank=True)
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
