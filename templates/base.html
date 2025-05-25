@@ -174,7 +174,7 @@
                                 <div class="card-body">
                                     {% if program.img%}
                                     {% load dropbox_filters %}
-                                    <img src="{{ program.img.url|dropbox_direct_url }}" alt="Event Image" class="img-fluid mb-3 rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
+                                    <img src="https://www.dropbox.com/preview/Baytna/{{ program.img.url|dropbox_direct_url }}" alt="Event Image" class="img-fluid mb-3 rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
                                     <p>{{ program.img.url|dropbox_direct_url }}</p>
                                     {% else %}
                                     <img src="/static/assets/noimage.png" alt="Event Image" class="img-fluid mb-3 rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
