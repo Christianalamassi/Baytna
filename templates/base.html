@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 {% load static %}
-{% load dropbox_filters %}
 <html lang="de">
     <head>
         <meta charset="utf-8" />
@@ -174,7 +173,8 @@
                             <div class="card h-100 text-white">
                                 <div class="card-body">
                                     {% if program.img%}
-                                    <img src="{{program.img.url}}" alt="Event Image" class="img-fluid mb-3 rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
+                                    {% load dropbox_filters %}
+                                    <img src="{{ program.img.url|dropbox_direct_url }}" alt="Event Image" class="img-fluid mb-3 rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
                                     <p>Image URL: {{ program.img.url|dropbox_direct_url }}</p> 
                                     {% else %}
                                     <img src="/static/assets/noimage.png" alt="Event Image" class="img-fluid mb-3 rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
