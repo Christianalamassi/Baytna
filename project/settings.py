@@ -138,7 +138,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 # MEDIA_URL = '/media/'
-MEDIA_URL = 'https://www.dropbox.com/home/Apps/baytnaapp?preview='
+MEDIA_URL = os.environ.get("MEDIA_URL")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
