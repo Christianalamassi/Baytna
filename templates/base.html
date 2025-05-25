@@ -173,9 +173,7 @@
                             <div class="card h-100 text-white">
                                 <div class="card-body">
                                     {% if program.img%}
-                                    {% load dropbox_filters %}
-                                    <img src="/static/assets/{{program.img.url}}" alt="Event Image" class="img-fluid mb-3 rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
-                                    <p>Image URL: {{ program.img.url|dropbox_direct_url }}</p> 
+                                    <img src="{{program.img.url}}" alt="Event Image" class="img-fluid mb-3 rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
                                     {% else %}
                                     <img src="/static/assets/noimage.png" alt="Event Image" class="img-fluid mb-3 rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
                                     {% endif %}
