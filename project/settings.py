@@ -92,11 +92,6 @@ WSGI_APPLICATION = "project.wsgi.application"
 
 DATABASES = {
     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-    # "default": dj_database_url.config(
-    #     default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}"
-    # )
-        # "ENGINE": "django.db.backends.sqlite3",
-        # "NAME": BASE_DIR / "db.sqlite3",
     }
 
 
@@ -143,7 +138,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
