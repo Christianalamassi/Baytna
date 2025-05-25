@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "app",
+    "storages",
 ]
 
 MIDDLEWARE = [
@@ -98,6 +99,19 @@ DATABASES = {
         # "NAME": BASE_DIR / "db.sqlite3",
     }
 
+# STORAGES = {
+#     "default": {
+#         "BACKEND": "storages.backends.dropbox.DropboxStorage",
+#         "OPTIONS": {},
+#     },
+#     "staticfiles": {
+#         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+#     },
+# }
+
+DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+
+DROPBOX_OAUTH2_TOKEN = os.environ.get("DROPBOX_OAUTH2_TOKEN")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -143,6 +157,10 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+STATICFILES_STORAGE = "storages.backends.dropbox.DropboxStorage"
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
