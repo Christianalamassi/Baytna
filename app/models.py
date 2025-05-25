@@ -1,9 +1,10 @@
 from django.db import models
+from storages.backends.dropbox import DropBoxStorage
+
 
 # Create your models here.
 
 class Aktuelle(models.Model):
-    img = models.ImageField(upload_to="aktuelles/", blank=True, null=True)
     date = models.DateField(blank=False, null=True)
     text = models.TextField(max_length=5800, blank=False)
 
@@ -15,7 +16,7 @@ class Aktuelle(models.Model):
     
 
 class Program(models.Model):
-    img = models.ImageField(upload_to="programs/", blank=True, null=True)
+    img = models.ImageField(upload_to="programs/", storage=DropBoxStorage(), blank=True, null=True)
     title = models.CharField(max_length=80, default="Untitled Program", blank=False)
     when_starts = models.CharField(max_length=80, blank=True)
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
