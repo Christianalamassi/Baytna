@@ -8,7 +8,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Copy app files
-COPY nginx.conf /etc/nginx/sites-available/default
+COPY . .
 
 # Install nginx
 RUN apt update && apt install -y nginx
