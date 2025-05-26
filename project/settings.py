@@ -134,7 +134,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 DROPBOX_OAUTH2_TOKEN = os.environ.get("DROPBOX_OAUTH2_TOKEN")
 DROPBOX_ROOT_PATH = 'media'
 
@@ -144,14 +145,3 @@ DROPBOX_ROOT_PATH = 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [BASE_DIR / 'static']    # if you use it
-
-
-
-
-
-
-
-
-
-
-
