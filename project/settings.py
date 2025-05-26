@@ -137,6 +137,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
 DROPBOX_OAUTH2_TOKEN = os.environ.get("DROPBOX_OAUTH2_TOKEN")
+if not DROPBOX_OAUTH2_TOKEN:
+    raise ValueError("Missing Dropbox OAuth2 Token")
 DROPBOX_ROOT_PATH = 'media'
 
 
