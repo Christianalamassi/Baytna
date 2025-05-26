@@ -18,6 +18,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='program',
             name='img',
-            field=models.ImageField(blank=True, null=True, storage=storages.backends.dropbox.DropboxStorage(), upload_to='programs/'),
+            field=models.ImageField(blank=True, null=True, upload_to='programs/'),
         ),
     ]
