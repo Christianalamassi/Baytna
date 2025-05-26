@@ -2,6 +2,9 @@ from django.db import models
 
 # Create your models here.
 
+def program_image_upload(instance, filename):
+    return f"programs/{filename}"
+
 class Aktuelle(models.Model):
     date = models.DateField(blank=False, null=True)
     text = models.TextField(max_length=5800, blank=False)
@@ -14,7 +17,7 @@ class Aktuelle(models.Model):
     
 
 class Program(models.Model):
-    img = models.ImageField(blank=True, null=True)
+    img = models.ImageField(upload_to=program_image_upload, blank=True, null=True)
     title = models.CharField(max_length=80, default="Untitled Program", blank=False)
     when_starts = models.CharField(max_length=80, blank=True)
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
@@ -39,7 +42,7 @@ class AktuelleEnglish(models.Model):
     
 
 class ProgramEnglish(models.Model):
-    img = models.ImageField(blank=True, null=True)
+    img = models.ImageField(upload_to=program_image_upload, blank=True, null=True)
     title = models.CharField(max_length=80, default="Untitled Program", blank=False)
     when_starts = models.CharField(max_length=80, blank=True)
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
@@ -64,7 +67,7 @@ class AktuelleArabic(models.Model):
     
 
 class ProgramArabic(models.Model):
-    img = models.ImageField(blank=True, null=True)
+    img = models.ImageField(upload_to=program_image_upload, blank=True, null=True)
     title = models.CharField(max_length=80, default="Untitled Program", blank=False)
     when_starts = models.CharField(max_length=80, blank=True)
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
