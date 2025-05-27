@@ -38,7 +38,8 @@ DEBUG=False
 
 ALLOWED_HOSTS = [
     'www.baytna-berlin.de', 
-    '127.0.0.1'
+    '127.0.0.1',
+    '.railway.app'
     ]
 
 
