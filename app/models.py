@@ -1,9 +1,10 @@
 from django.db import models
+from django_dropbox_storage.storage import DropboxStorage
 
 # Create your models here.
 
-def program_image_upload(instance, filename):
-    return f"programs/{filename}"
+# def program_image_upload(instance, filename):
+#     return f"programs/{filename}"
 
 class Aktuelle(models.Model):
     date = models.DateField(blank=False, null=True)
@@ -17,7 +18,7 @@ class Aktuelle(models.Model):
     
 
 class Program(models.Model):
-    img = models.ImageField(upload_to=program_image_upload, blank=True, null=True)
+    img = models.ImageField(upload_to='photos', storage=DropboxStorage(), blank=True, null=True)
     title = models.CharField(max_length=80, default="Untitled Program", blank=False)
     when_starts = models.CharField(max_length=80, blank=True)
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
@@ -42,7 +43,7 @@ class AktuelleEnglish(models.Model):
     
 
 class ProgramEnglish(models.Model):
-    img = models.ImageField(upload_to=program_image_upload, blank=True, null=True)
+    img = models.ImageField(blank=True, null=True)
     title = models.CharField(max_length=80, default="Untitled Program", blank=False)
     when_starts = models.CharField(max_length=80, blank=True)
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
@@ -67,7 +68,7 @@ class AktuelleArabic(models.Model):
     
 
 class ProgramArabic(models.Model):
-    img = models.ImageField(upload_to=program_image_upload, blank=True, null=True)
+    img = models.ImageField(blank=True, null=True)
     title = models.CharField(max_length=80, default="Untitled Program", blank=False)
     when_starts = models.CharField(max_length=80, blank=True)
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)

@@ -33,7 +33,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 CSRF_TRUSTED_ORIGINS = ['https://www.baytna-berlin.de']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False").lower() in ('true', "1", "yes")
+# DEBUG = os.getenv("DEBUG", "False").lower() in ('true', "1", "yes")
+DEBUG=False
 
 ALLOWED_HOSTS = [
     'www.baytna-berlin.de', 
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "app",
     "storages",
+    "django_dropbox_storage",
 ]
 
 MIDDLEWARE = [
@@ -135,9 +137,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
-DROPBOX_OAUTH2_TOKEN = os.environ.get("DROPBOX_OAUTH2_TOKEN")
-if not DROPBOX_OAUTH2_TOKEN:
+DEFAULT_FILE_STORAGE = 'django_dropbox_storage.storage.DropboxStorage'
+DROPBOX_ACCESS_TOKEN = os.environ.get("DROPBOX_ACCESS_TOKEN")
+if not DROPBOX_ACCESS_TOKEN:
     raise ValueError("Missing Dropbox OAuth2 Token")
 DROPBOX_ROOT_PATH = 'media'
 
