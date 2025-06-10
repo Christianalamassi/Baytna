@@ -20,6 +20,7 @@ class Program(models.Model):
     when_starts = models.CharField(max_length=80, blank=True)
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
     description = models.TextField(max_length=2000, blank=True)
+    button = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = "Program German"
@@ -45,6 +46,7 @@ class ProgramEnglish(models.Model):
     when_starts = models.CharField(max_length=80, blank=True)
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
     description = models.TextField(max_length=2000, blank=True)
+    button = models.BooleanField(default=False)
 
     class Meta:
         verbose_name="Program English"
@@ -70,6 +72,7 @@ class ProgramArabic(models.Model):
     when_starts = models.CharField(max_length=80, blank=True)
     when_at = models.CharField(max_length=80, default='time_zone', blank=False)
     description = models.TextField(max_length=2000, blank=True)
+    button = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = "Program Arabic"
@@ -85,3 +88,13 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"{self.name}, {self.email}"
+    
+
+class Register(models.Model):
+    name = models.CharField(max_length=50, blank=False)
+    phone = models.TextField(max_length=15, blank=False, null=False)
+    kids = models.TextField(max_length=1, blank=False, null=False)
+    age = models.TextField(max_length=1, blank=False, null=False)
+
+    def __str__(self):
+        return f"{self.name}, {self.phone}"

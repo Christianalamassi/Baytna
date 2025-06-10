@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
-from .models import Aktuelle, Program, AktuelleEnglish, ProgramEnglish, AktuelleArabic, ProgramArabic,Contact
+from .models import Aktuelle, Program, AktuelleEnglish, ProgramEnglish, AktuelleArabic, ProgramArabic,Contact,Register
 
 # Create your views here.
 @csrf_exempt
@@ -73,6 +73,69 @@ def arabic(request):
         "programsArabic":programsArabic,
     }
     return render(request, 'arabic.html', context)
+
+
+@csrf_exempt
+def register(request):
+    registers = Register.objects.all()
+
+    if request.method == "POST":
+        name = request.POST.get('name')
+        phone =  request.POST.get('phone')
+        kids = int(request.POST.get("kids"))
+        age = int(request.POST.get("age"))
+
+        # Save the contact
+        if name and phone and kids and age:
+            Register.objects.create(name=name, phone=phone, kids=kids, age=age)
+            messages.success(request, 'Ihre Nachricht wurde erfolgreich übermittelt!')
+
+    context ={
+        "registers": registers
+    }
+    return render(request, "register.html", context)
+
+
+@csrf_exempt
+def register_english(request):
+    registers = Register.objects.all()
+
+    if request.method == "POST":
+        name = request.POST.get('name')
+        phone =  request.POST.get('phone')
+        kids = int(request.POST.get("kids"))
+        age = int(request.POST.get("age"))
+
+        # Save the contact
+        if name and phone and kids and age:
+            Register.objects.create(name=name, phone=phone, kids=kids, age=age)
+            messages.success(request, 'Your message was submitted successfully!')
+
+    context ={
+        "registers": registers
+    }
+    return render(request, "register_english.html", context)
+
+
+@csrf_exempt
+def register_arabic(request):
+    registers = Register.objects.all()
+
+    if request.method == "POST":
+        name = request.POST.get('name')
+        phone =  request.POST.get('phone')
+        kids = int(request.POST.get("kids"))
+        age = int(request.POST.get("age"))
+
+        # Save the contact
+        if name and phone and kids and age:
+            Register.objects.create(name=name, phone=phone, kids=kids, age=age)
+            messages.success(request, '!تم إرسال رسالتك بنجاح')
+
+    context ={
+        "registers": registers
+    }
+    return render(request, "register_arabic.html", context)
 
 
 def impressum(request):

@@ -1,282 +1,190 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="ar" dir="rtl">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Baytna</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{% static 'assets/icon/favicon.ico' %}" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.5.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link rel="stylesheet" tayp='text/css' href= "{% static 'css/style.css' %}" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-white text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#home">الرئيسية</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#news">الأخبار</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#events">الفعاليات</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">اتصل بنا</a></li>
-                        <li class="nav-item mx-0 mx-lg-1 language-dropdown">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Baytna</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/icon/favicon.ico' %}" />
+    <!-- Font Awesome icons (free version)-->
+    <!-- <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script> -->
+    <script src="https://use.fontawesome.com/releases/v6.5.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" type='text/css' href="{% static 'css/style.css' %}" />
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-white text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <h1 class="navbar-brand">Baytna Community Center</h1>
+            <button class="navbar-toggler text-uppercase font-weight-bold text-black rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="/arabic">الرئيسية</a></li>
+                    <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#news">aktuelles</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#events">Angebote</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Kontakt</a></li> -->
+                    <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/templates/datenschutzerklärung.html">datenschutzerklärung</a></li> -->
+                    <!-- <li class="nav-item mx-0 mx-lg-1 language-dropdown">
                             <button class="language-btn"> <i class="fas fa-globe" style="color: #000;"></i></button>
-                            <div class="language-menu" style="left: auto !important;">
-                                <a href="{% url 'Homepage' %}">DE</a>
+                            <div class="language-menu">
                                 <a href="{% url 'english' %}">EN</a>
+                                <a href="{% url 'arabic' %}">عربي</a>
                             </div>
-                        </li>
-                    </ul>
-                </div>
-                 <h1 class="navbar-brand">Baytna Community Center</h1>
-                <button class="navbar-toggler text-uppercase font-weight-bold text-black rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
+                        </li> -->
+                </ul>
             </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead text-white text-center main_img" id="home">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Baytna</h1>
-                <!-- Icon Divider-->
-                <!-- <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-cross"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div> -->
-                <hr class="hr-titles">
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">
-                    Herzlich Willkommen im Baytna Begegnungszentrum.<br>
+        </div>
+    </nav>
 
-                    Welcome at Baytna Community Center.<br> 
-                    
-                    اهلا وسهلا في بيتنا
-                </p>
-            </div>
-        </header>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio">
+    <!-- Contact Section-->
+    <section class="page-section" id="contact">
+        <div class="container">
+            <!-- 🔔 Message Block (add here) -->
+            <br>
+            <br>
+            <br>
+            {% if messages %}
             <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">BAYTNA - BAYTKUM</h2>
-                <!-- Icon Divider-->
-                <!-- <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-cross"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div> -->
-                <hr class="hr-titles">
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
-                    <div class="clo-12 clo-sm-8 col-md-6 col-lg-4 mb-4 d-flex">
-                        <div class="portfolio-item mx-auto">
-                            <img src=" static/assets/logo.png" alt="logo">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" id="message_alert"
+                            role="alert">
+                            {{ message|safe }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
+                        {% endfor %}
                     </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-5 mb-4">
-                        <div class="portfolio-item mx-auto">
-                            <h6 style="color: #99700a;">BAYTNA - BAYTKUM</h6>
-                            <p style="text-align:justify;">
-                                أهلاً وسهلاً! اشعر وكأنك في بيتك<br>
-                            
-                                ينبغي أن يشعر الجميع بالراحة في بيتنا.<br>
-                            
-                                بيتنا مشروعٌ لجمعية <a href="https://www.hope-ev.org/home/" target="_blank" style="color: #99700a;"> HOPE e.V. </a>التي تأسست عام ٢٠٢٥ في برلين-كرويتسبرغ.<br>
-                            
-                                نقدم مجموعات ودورات وفعاليات للرجال والنساء والأطفال والعائلات.<br>
-                            
-                                هدفنا هو أن يشعر سكان برلين من جميع الخلفيات الثقافية وكأنهم في بيتهم.<br>
-                            
-                                بصفتنا أشخاصاً من ثقافات مختلفة، نرغب في تعلم أشياء جديدة معاً، وتكوين صداقات، وبناء روح الجماعة
-                            </p>
-                        </div>
-                    </div>
-                  
                 </div>
             </div>
-        </section>
+            {% endif %}
+            <br>
+            <br>
+            <br>
 
-        <!-- News Section-->
-        <section class="page-section text-white mb-0" id="news">
-            <div class="container">
-                <!-- News Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">الأخبار</h2>
-                <!-- Icon Divider-->
-                <!-- <div class="divider-custom">
+            <!-- Contact Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-white">تسجيل</h2>
+            <!-- Icon Divider-->
+            <!-- <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-cross"></i></div>
                     <div class="divider-custom-line"></div>
                 </div> -->
-                <hr class="hr-titles">
-                <!-- News Section Content-->
-                {% for aktuelle in aktuellesArabic %}
+            <hr class="hr-titles">
+            <!-- Contact Section Form-->
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7">
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+                    <form id="contactForm" method="POST">
+                        <!-- Name input-->
+                        {% csrf_token %}
 
-                <div class="raw">
-                    <div style="word-wrap:break-word">
-                        {% if aktuelle.img%}
-                        <img src="{{aktuelle.img.url}}" alt="Event Image" class="img-fluid mb-3 rounded-circle"
-                            style="width: 250px; height: 250px; object-fit: cover;">
-                        {% endif %}
-                        <div class="col-lg-6 ms-6">
-                            <p class="lead">{{aktuelle.date}}</p>
-                        </div>
-                        <div class="col-lg-6 me-6">
-                            <p class="lead">{{aktuelle.text}}</p>
-                        </div>
-                        <hr>
-                    </div>
-                </div>
-                {% empty%}
-                <div class="col-lg-10 ms-auto"><p class="lead">لا توجد بيانات متاحة</p></div>
-
-                {% endfor %}
-
-                <!-- News Section Button-->
-                <!-- <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
-                        <i class="fas fa-download me-2"></i>
-                        Free Download!
-                    </a>
-                </div> -->
-            </div>
-        </section><br><br>
-
-         <!-- Events Section-->
-         <section class="page-section text-white mb-0" id="events">
-            <div class="container">
-                <!-- Events Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">الفعاليات</h2>
-                <!-- Icon Divider-->
-                <!-- <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-cross"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div> -->
-                <hr class="hr-titles">
-                <!-- Events Section Content-->
-                <div class="program-scroll-container">
-                    {% for program in programsArabic %}
-                    <div class="program-card text-white">
-                        <div class="card h-100 text-white">
-                            <div class="card-body">
-                                {% if program.img%}
-                                <img src="{{program.img.url}}" alt="Event Image" class="img-fluid mb-3 rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
-                                {% else %}
-                                <img src="/static/assets/noimage.png" alt="Event Image" class="img-fluid mb-3 rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
-                                {% endif %}
-                                <p class="lead" style="font-weight: 900;"><strong>{{ program.title }}</strong></p>
-                                <p style="font-weight: 700;">يبداء {{program.when_starts}}</p>
-                                <p style="font-weight: 700;">{{program.when_at}}</p>
-                                <p>{{program.description}}</p>
-                                {% if program.button %}
-                                <div class="text-center mt-3">
-                                    <a href="/register_arabic" target="_blank" style="color: #99700a;">سجل الآن</a>
-                                </div>
-                                {% endif %}
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="name" name="name" type="text"
+                                placeholder="Enter your name..." data-sb-validations="required" required />
+                            <label for="name">الاسم الكامل</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">الاسم مطلوب.
                             </div>
                         </div>
-                    </div>
-                    {% empty%}
-                    <div class="col-lg-10 ms-auto"><p class="lead">لا توجد بيانات متاحة</p></div>
-                    {% endfor %}
-                </div>
-                <!-- Events Section Button-->
-                <!-- <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
-                        <i class="fas fa-download me-2"></i>
-                        Free Download!
-                    </a>
-                </div> -->
-            </div>
-        </section>
-
-        <!-- Contact Section-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <!-- 🔔 Message Block (add here) -->
-                {% if messages %}
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-8 offset-md-2">
-                                {% for message in messages %}
-                                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" id="message_alert" role="alert">
-                                    {{ message|safe }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                                {% endfor %}
-                            </div>
+                        <!-- Phone address input-->
+                        <div class="form-floating mb-3 d-flex" style="gap: 0.3rem; align-items: center;">
+                            <input class="form-control" id="phone" name="phone" type="tel" maxlength="15" placeholder="Telefonnummer"
+                            style="align-items: center;"
+                                data-sb-validations="required,phone" required
+                                onfocus="document.getElementById('phone-prefix').style.visibility = 'visible';"
+                                onblur="document.getElementById('phone-prefix').style.visibility = 'hidden';" />
+                                <span id="phone-prefix" style="visibility: hidden; font-size: 1.4rem; align-items: center; padding-top: 1rem; ">49+</span>
+                            <label for="phone">رقم الهاتف</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">رقم الهاتف مطلوب.</div>
+                            <div class="invalid-feedback" data-sb-feedback="phone:phone">رقم الهاتف غير صالح.</div>
                         </div>
-                    </div>
-                {% endif %}
-                <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">اتصل بنا</h2>
-                <!-- Icon Divider-->
-                <!-- <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-cross"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div> -->
-                <hr class="hr-titles">
-                <!-- Contact Section Form-->
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-7">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm"  method="POST">
-                            <!-- Name input-->
-                             {% csrf_token %}
-                             
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." data-sb-validations="required" required />
-                                <label for="name">الاسم الكامل</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" required />
-                                <label for="email">عنوان البريد الإلكتروني</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" required></textarea>
-                                <label for="message">الرسالة</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                            <!-- agreement statement -->
-                            <div style="display:flex; align-items:center; gap:12px;">
-                                <input type="checkbox" id="agreement" required>
-                                <label for="agreement">
-                                    أوافق على تخزين هذه البيانات ومعالجتها لغرض الاتصال بي أنا على علم بأنه يمكنني سحب موافقتي في أي وقت يتم تحديد
+                        <!-- number of children input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="kids" name="kids" type="number"  maxlength="3"
+                                placeholder="how many children here..." style="height: 10rem"
+                                data-sb-validations="required" required />
+                            <label for="kids">كم عدد الاطفال</label>
+                            <div class="invalid-feedback" data-sb-feedback="kids:required">مطلوب عدد من الأطفال.</div>
+                        </div>
+                       <!-- Dynamic age inputs here -->
+                        <div id="ageInputsContainer"></div>
+
+                        <script>
+                            document.getElementById('kids').addEventListener('input', function () {
+                                const container = document.getElementById('ageInputsContainer');
+                                container.innerHTML = ''; // Clear existing age inputs
+                                const numKids = parseInt(this.value, 10);
+
+                                if (!isNaN(numKids) && numKids < 10) {
+                                    for (let i = 1; i <= numKids; i++) {
+                                        const wrapper = document.createElement('div');
+                                        wrapper.className = 'form-floating mb-3 d-flex align-items-center gap-2';
+
+                                        const input = document.createElement('input');
+                                        input.className = 'form-control';
+                                        input.type = 'number';
+                                        input.name = `age`;
+                                        input.placeholder = `العمر`;
+                                        input.required = true;
+                                        input.style.width = '100px';
+
+                                        const label = document.createElement('label');
+                                        label.textContent = `العمر ${i}`;
+
+                                        const suffix = document.createElement('span');
+                                        suffix.textContent = 'سنوات';
+
+                                        const inputWrapper = document.createElement('div');
+                                        inputWrapper.className = 'position-relative';
+                                        inputWrapper.style.flex = '0 0 auto';
+
+                                        inputWrapper.appendChild(input);
+                                        wrapper.appendChild(inputWrapper);
+                                        wrapper.appendChild(suffix);
+
+                                        container.appendChild(wrapper);
+                                    }
+                                }
+                            });
+                        </script>
+
+                        <!-- agreement statement -->
+                        <div style="display:flex; align-items:center; gap:12px;">
+                            <input type="checkbox" id="agreement" name="agreement" required>
+                            <label for="agreement">
+                                 أوافق على تخزين هذه البيانات ومعالجتها لغرض الاتصال بي أنا على علم بأنه يمكنني سحب موافقتي في أي وقت يتم تحديد
                                     الحقول المطلوبة
-                                </label>
-                            </div>
-                            <br>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
+                            </label>
+                        </div>
+                        <br>
+                        <!-- Submit success message-->
+                        <!---->
+                        <!-- This is what your users will see when the form-->
+                        <!-- has successfully submitted-->
 
-                            <!-- <div class="d-none" id="submitSuccessMessage">
+                        <!-- <div class="d-none" id="submitSuccessMessage">
                                 <div class="text-center mb-3">
                                     <div class="fw-bolder">Form submission successful!</div>
                                     To activate this form, sign up at
@@ -285,19 +193,23 @@
                                 </div>
                             </div> -->
 
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <button style="background-color: #EDDEB9; color: #545353;" class="btn btn-xl" id="submitButton" type="submit">إرسال</button>
-                        </form>
-                    </div>
+                        <!-- Submit error message-->
+                        <!---->
+                        <!-- This is what your users will see when there is-->
+                        <!-- an error submitting the form-->
+                        <div class="d-none" id="submitErrorMessage">
+                            <div class="text-center text-danger mb-3">Error sending message!</div>
+                        </div>
+                        <!-- Submit Button-->
+                        <button style="background-color: #EDDEB9; color: #545353;" class="btn btn-xl" id="submitButton"
+                            type="submit">إرسال</button>
+                    </form>
                 </div>
             </div>
-        </section>
-        <!-- Footer-->
+        </div>
+    </section>
+
+    <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
                 <div class="row">

@@ -178,6 +178,11 @@
                                 <p style="font-weight: 600;">from {{program.when_starts}}</p>
                                 <p style="font-weight: 600;">{{program.when_at}}</p>
                                 <p>{{program.description}}</p>
+                                {% if program.button %}
+                                <div class="text-center mt-3">
+                                    <a href="/register_english" target="_blank" style="color: #99700a;">Register now</a>
+                                </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
