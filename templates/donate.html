@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name='robots' content='max-image-preview:large' />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Baytna</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/icon/favicon.ico' %}" />
+    <!-- Font Awesome icons (free version)-->
+    <!-- <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script> -->
+    <script src="https://use.fontawesome.com/releases/v6.5.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" type='text/css' href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+    <style>
+        :root {
+            --primary-gold: #99700a;
+            --light-gold: #EDDEB9;
+            --bg-sand: #f8f6f0;
+            --text-dark: #444;
+        }
+
+        body {
+            background-color: var(--bg-sand);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            padding-top: 80px;
+            /* Increased base font size */
+            font-size: 1.1rem;
+        }
+
+        .donation-container {
+            /* Widened from 600px to 900px */
+            max-width: 900px;
+            width: 95%;
+            background: white;
+            padding: 50px;
+            /* Increased padding for breathing room */
+            border-radius: 28px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            margin-bottom: 50px;
+        }
+
+        .title {
+            color: var(--primary-gold);
+            font-weight: 800;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            /* Bigger Title */
+        }
+
+        /* Improved Amount Buttons */
+        .amount-box {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .amount-btn {
+            background: white;
+            border: 2px solid #eee;
+            padding: 20px 10px;
+            /* Taller buttons */
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            /* Bigger font on buttons */
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        .amount-btn:hover {
+            border-color: var(--light-gold);
+            background-color: #fffdf9;
+        }
+
+        .amount-btn.active {
+            background-color: var(--primary-gold);
+            border-color: var(--primary-gold);
+            color: white;
+        }
+
+        /* Modern Form Inputs */
+        .input-group-text {
+            border-radius: 12px 0 0 12px !important;
+            background: #fdfdfd;
+            border: 2px solid #eee;
+            border-right: none;
+            font-weight: bold;
+            padding: 0 20px;
+        }
+
+        .form-control-lg {
+            border-radius: 0 12px 12px 0 !important;
+            border: 2px solid #eee;
+            font-size: 1.2rem;
+            /* Larger input text */
+            height: 60px;
+            /* Taller input */
+        }
+
+        /* Benefit List */
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .benefit-list li {
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.1rem;
+            /* Bigger text */
+        }
+
+        .benefit-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-gold);
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+
+        /* Bank Info Box */
+        .bank-info {
+            background: #f9f9f9;
+            border-radius: 16px;
+            padding: 30px;
+            font-size: 1.05rem;
+            /* Larger font */
+            border: 1px dashed #ddd;
+        }
+
+        .bank-info strong {
+            color: #000;
+        }
+
+        .qr-code {
+            width: 200px;
+            /* Slightly larger QR */
+            height: 200px;
+            padding: 10px;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 12px;
+        }
+
+        /* Text Muted adjustments for readability */
+        .text-muted {
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <nav class="navbar fixed-top bg-white shadow-sm">
+            <div class="container">
+                <a href="/" class="text-decoration-none" style="color: var(--primary-gold); font-weight: 600;">
+                    <i class="fas fa-arrow-left me-2"></i> Zurück zu Baytna
+                </a>
+            </div>
+        </nav>
+
+        <div class="container d-flex justify-content-center">
+            <div class="donation-container">
+                <div class="text-center mb-4">
+                    <h1 class="title">Unterstütze Baytna</h1>
+                    <p class="text-muted">Deine Spende ermöglicht unsere gemeinnützige Arbeit für die Community.</p>
+                    <br>
+                    <p class="text-muted">
+                        Hope e.V. ist als gemeinnütziger und mildtätiger Verein anerkannt.
+                        Spenden können steuerlich geltend gemacht werden. Im 1.
+                        Quartal des Folgejahres stellen wir eine Spendenbescheinigung aus,
+                        sofern bei Überweisungen die Anschrift des Spenders mitgeteilt wird.
+                    </p>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <ul class="benefit-list">
+                            <li>Unterstützung von Familien & Kindern</li>
+                            <li>Kostenlose Community-Angebote & Projekte</li>
+                            <li>Spendenbescheinigung am Jahresanfang</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- <form id="donationForm" method="POST" action="{% url 'donate' %}">
+                {% csrf_token %}
+                <label class="small text-uppercase fw-bold text-muted mb-3 d-block">Betrag wählen</label>
+                
+                <div class="amount-box">
+                    <button type="button" class="amount-btn" data-value="5">5 €</button>
+                    <button type="button" class="amount-btn" data-value="10">10 €</button>
+                    <button type="button" class="amount-btn" data-value="20">20 €</button>
+                    <button type="button" class="amount-btn" data-value="50">50 €</button>
+                </div>
+
+                <input type="hidden" name="amount" id="finalAmount" value="">
+
+                <div class="mb-4">
+                    <div class="input-group">
+                        <span class="input-group-text">€</span>
+                        <input type="number" id="customAmount" class="form-control form-control-lg"
+                            placeholder="Anderer Betrag">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-payment btn-stripe shadow-sm">
+                    <i class="fa-solid fa-credit-card"></i> Sicher mit Karte spenden
+                </button>
+                <p class="text-center mb-4" style="font-size: 11px; color: #aaa;">
+                    Abwicklung über Stripe • Verschlüsselt & Sicher
+                </p>
+            </form>
+
+            <div class="d-flex align-items-center mb-4">
+                <div class="flex-grow-1 border-bottom"></div>
+                <span class="px-3 text-muted small">ODER PAYPAL</span>
+                <div class="flex-grow-1 border-bottom"></div>
+            </div>
+
+            <form action="https://www.paypal.com/donate" method="post" target="_blank">
+                <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL@example.com">
+                <input type="hidden" name="currency_code" value="EUR">
+                <button type="submit" class="btn-payment btn-paypal shadow-sm mb-4">
+                    <i class="fa-brands fa-paypal"></i> Mit PayPal spenden
+                </button>
+            </form> -->
+
+                <div class="bank-info mt-5">
+                    <h6 class="fw-bold mb-3"><i class="fas fa-university me-2"></i>Banküberweisung</h6>
+                    <div class="row align-items-center">
+                        <div class="col-sm-7" style="line-height: 1.6;">
+                            <small class="text-muted d-block">Empfänger: Hope e.V.</small>
+                            <strong>IBAN:</strong> DE19 6045 0050 0030 1875 60<br>
+                            <strong>BIC:</strong> SOLADES1LBG<br>
+                            <strong>Betreff:</strong> Projekt 8991 Berlin Begegnungszentrum
+                        </div>
+                        <div class="col-sm-5 text-center mt-3 mt-sm-0">
+                            <img src="{% static 'assets/qr.png' %}" alt="SEPA QR" class="qr-code img-fluid">
+                            <p class="mt-1 mb-0" style="font-size: 10px;">Direkt scannen</p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <p>Bitte geben Sie auch Ihre Adresse an, falls diese noch nicht bei uns erfasst wurde, damit wir Ihnen
+                    die
+                    Spendenbescheinigung zusenden können.
+                    <a class="btn btn-outline-light btn-social mx-1" style="color: #000000;"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=baytna.berlin@gmail.com" target="_blank"
+                        aria-label="Email us"><i class="fa-solid fa-envelope"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+
+
+        <!-- <script>
+        const amountBtns = document.querySelectorAll('.amount-btn');
+        const customInput = document.getElementById('customAmount');
+        const finalInput = document.getElementById('finalAmount');
+
+        amountBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Toggle active class
+                amountBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Clear custom input
+                customInput.value = '';
+                
+                // Update hidden input (Convert to cents if your backend requires it, e.g., btn.dataset.value * 100)
+                finalInput.value = btn.dataset.value;
+            });
+        });
+
+        customInput.addEventListener('input', () => {
+            amountBtns.forEach(b => b.classList.remove('active'));
+            finalInput.value = customInput.value;
+        });
+    </script> -->
+
+
+
+
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Standort</h4>
+                        <p class="lead mb-0">
+                            Baytna Begegnungszentrum <br>
+                            Dieffenbachstraße 69 (Hinterhaus)<br>
+                            10967 Berlin
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">sozialen Medien</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" target="_blank"
+                            href="https://www.instagram.com/baytna_berlin/?igsh=MWJ3czdzNGlrbmYxZQ%3D%3D#"><i
+                                class="fa-brands fa-instagram"></i><a>
+                                <a class="btn btn-outline-light btn-social mx-1" target="_blank"
+                                    href="https://www.facebook.com/share/1A3eGGnE4k/"><i
+                                        class="fab fa-fw fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="#!"><i
+                                        class="fa-solid fa-envelope"></i></a>
+                    </div>
+                    <!-- Footer About Text-->
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">Über uns</h4>
+                        <p class="lead mb-0">
+                            Baytna baytkum ist Arabisch und bedeutet "Unser Haus ist Euer Haus."
+                            Jeder soll sich im Baytna wohlfühlen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </footer>
+        <!-- Copyright Section-->
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright &copy; Baytna 2025</small></div>
+        </div>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
+                            aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
+                                    <!-- Icon Divider-->
+                                    <!-- <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-cross"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div> -->
+                                    <hr class="hr-titles">
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="#" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                                        neque
+                                        assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
+                                        velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque.
+                                        Nam.
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
+                            aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
+                                    <!-- Icon Divider-->
+                                    <!-- <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-cross"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div> -->
+                                    <hr class="hr-titles">
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="#" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                                        neque
+                                        assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
+                                        velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque.
+                                        Nam.
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
+                            aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent
+                                    </h2>
+                                    <!-- Icon Divider-->
+                                    <!-- <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-cross"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div> -->
+                                    <hr class="hr-titles">
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="#" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                                        neque
+                                        assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
+                                        velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque.
+                                        Nam.
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 4-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
+                            aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
+                                    <!-- Icon Divider-->
+                                    <!-- <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-cross"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div> -->
+                                    <hr class="hr-titles">
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="#" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                                        neque
+                                        assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
+                                        velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque.
+                                        Nam.
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 5-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
+                            aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe
+                                    </h2>
+                                    <!-- Icon Divider-->
+                                    <!-- <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-cross"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div> -->
+                                    <hr class="hr-titles">
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="#" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                                        neque
+                                        assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
+                                        velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque.
+                                        Nam.
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 6-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
+                            aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
+                                    <!-- Icon Divider-->
+                                    <!-- <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-cross"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div> -->
+                                    <hr class="hr-titles">
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="#" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+                                        neque
+                                        assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
+                                        velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque.
+                                        Nam.
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cookie Consent Banner -->
+        <div style=" position: fixed; bottom: 0; left: 0; right: 0; background: #333; color: white; padding: 10px; text-align: center; display: none;"
+            id="cookie-consent"> We use cookies to improve your experience. By clicking "Accept", you agree to our use
+            of
+            essential
+            cookies.
+            <button style="background-color: #EDDEB9; color: #545353; padding:5px;" id="accept-cookies"
+                class="btn btn-xl">Accept
+            </button>
+            <a href="#" id="learn-more" style="color: #EDDEB9; padding-left:10px;">Learn more</a>.</span>
+        </div>
+
+        <div id="cookies" class="col-md-6 col-lg-5 mb-4">
+            <p>
+                <button id="close-modal">X</button>
+                <br><br>
+                <span>Datenschutzrichtlinie für BAYTNA,</span><br><br>
+                <b>Gültig ab [Datum einfügen]</b><br>
+                BAYTNA, erreichbar über [Website-URL einfügen], verpflichtet sich zum Schutz Ihrer
+                personenbezogenen Daten und Ihrer Privatsphäre. Bei Fragen oder Bedenken zu dieser Datenschutzerklärung
+                oder
+                unseren Praktiken im Zusammenhang mit Ihren personenbezogenen Daten kontaktieren Sie uns bitte unter
+                [E-Mail-Adresse einfügen].<br><br>
+
+                <b>Erhobene Daten</b><br>
+                Wir erfassen möglicherweise personenbezogene Daten, die Sie uns bei der Registrierung auf unserer
+                Website,
+                beim
+                Abonnieren unseres Newsletters oder bei der Kontaktaufnahme mitteilen. Zu den personenbezogenen Daten,
+                die
+                wir
+                erfassen können, gehören:<br>
+                Vorname<br>
+                E-Mail-Adresse<br><br>
+
+                <b>Wie wir Ihre Daten verwenden</b><br>
+
+                Wir verwenden die erfassten Daten wie folgt:<br>
+
+                1- Zur Bereitstellung, zum Betrieb und zur Wartung unserer Website.<br>
+
+                2- Zur Verbesserung, Personalisierung und Erweiterung unserer Website.<br>
+
+                3- Um zu verstehen und zu analysieren, wie Sie unsere Website nutzen.<br>
+
+                4- Um mit Ihnen direkt oder über einen unserer Partner zu kommunizieren, unter anderem für den
+                Kundenservice, um
+                Ihnen Updates und andere Informationen zur Website zukommen zu lassen, sowie für Marketing- und
+                Werbezwecke.<br><br>
+
+                <b>Rechtsgrundlage für die Verarbeitung personenbezogener Daten gemäß DSGVO</b><br>
+
+                Wenn Sie im Europäischen Wirtschaftsraum (EWR) ansässig sind, hängt die Rechtsgrundlage von BAYTNA für
+                die
+                Erhebung und Verwendung der in dieser Datenschutzerklärung beschriebenen personenbezogenen Daten von den
+                von
+                uns
+                erhobenen Daten und dem Kontext der Erhebung ab. Wir können Ihre personenbezogenen Daten verarbeiten,
+                weil:<br>
+                1- Wir einen Vertrag mit Ihnen abschließen müssen.<br>
+                2- Sie uns Ihre Einwilligung hierzu erteilt haben.<br>
+                3- Die Verarbeitung liegt in unserem berechtigten Interesse und wird nicht durch Ihre Rechte außer Kraft
+                gesetzt.<br>
+                4- Um gesetzliche Vorschriften einzuhalten.<br><br>
+
+                <b>Aufbewahrung Ihrer Daten</b><br>
+
+                Wir speichern Ihre personenbezogenen Daten nur so lange, wie es für die in dieser Datenschutzerklärung
+                genannten
+                Zwecke erforderlich ist. Wir speichern und verwenden Ihre Daten, soweit dies zur Erfüllung unserer
+                gesetzlichen
+                Verpflichtungen, zur Beilegung von Streitigkeiten und zur Durchsetzung unserer Richtlinien erforderlich
+                ist.<br><br>
+
+                <b>Ihre Datenschutzrechte gemäß DSGVO</b><br>
+
+                Wenn Sie im Europäischen Wirtschaftsraum (EWR) ansässig sind, haben Sie bestimmte Datenschutzrechte.
+                BAYTNA
+                ist
+                bestrebt, angemessene Maßnahmen zu ergreifen, um Ihnen die Berichtigung, Änderung, Löschung oder
+                Einschränkung
+                der Nutzung Ihrer personenbezogenen Daten zu ermöglichen. Wenn Sie darüber informiert werden möchten,
+                welche
+                personenbezogenen Daten wir über Sie gespeichert haben und ob diese aus unseren Systemen gelöscht werden
+                sollen,
+                kontaktieren Sie uns bitte. Unter bestimmten Umständen haben Sie folgende Datenschutzrechte:<br>
+
+                1- Das Recht auf Zugriff, Aktualisierung oder Löschung Ihrer bei uns gespeicherten Daten.<br>
+                2- Das Recht auf Berichtigung.<br>
+                3- Das Recht auf Widerspruch.<br>
+                4- Das Recht auf Einschränkung.<br>
+                5- Das Recht auf Datenübertragbarkeit.<br>
+                6- Das Recht auf Widerruf der Einwilligung.<br><br>
+
+                <b>Sicherheit Ihrer Daten</b><br>
+                Wir setzen administrative, technische und physische Sicherheitsmaßnahmen ein, um Ihre personenbezogenen
+                Daten zu
+                schützen. Obwohl wir angemessene Maßnahmen zum Schutz der von Ihnen bereitgestellten personenbezogenen
+                Daten
+                ergriffen haben, beachten Sie bitte, dass keine Methode der Internetübertragung oder elektronischen
+                Speicherung
+                100 % sicher ist und wir keine absolute Sicherheit garantieren können.<br><br>
+
+                <b>Änderungen dieser Datenschutzrichtlinie</b><br>
+                Wir behalten uns das Recht vor, unsere Datenschutzrichtlinie von Zeit zu Zeit zu aktualisieren. Wir
+                informieren
+                Sie über Änderungen, indem wir die neue Datenschutzrichtlinie auf dieser Seite veröffentlichen. Wir
+                empfehlen
+                Ihnen, diese Datenschutzrichtlinie regelmäßig auf Änderungen zu überprüfen. Änderungen dieser
+                Datenschutzrichtlinie treten mit ihrer Veröffentlichung auf dieser Seite in Kraft.
+            </p>
+        </div>
+        <!-- Background overlay -->
+        <div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                background: rgba(0, 0, 0, 0.5); z-index: 999;">
+        </div>
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/script.js'%}"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <!-- alert time set -->
+        <script>
+            setTimeout(function () {
+                let alert = document.getElementById('message_alert');
+                if (alert) {
+                    alert.style.display = 'none';
+                }
+            }, 5000);
+        </script>
+        <!-- Cookie Consent Banner -->
+        <script>
+            window.onload = function () {
+                if (!getCookie('cookieConsent')) {
+                    document.getElementById('cookie-consent').style.display = 'block';
+                    document.getElementById('cookie-consent').style.zIndex = '1001';
+                    document.getElementById('mainNav').style.zIndex = '998';
+                    document.getElementById("overlay").style.display = "block";
+                }
+            };
+
+            document.getElementById('accept-cookies').onclick = function () {
+                setCookie('cookieConsent', 'accepted', 30);
+                document.getElementById('cookie-consent').style.display = 'none';
+            };
+
+            document.getElementById('accept-cookies').onclick = function () {
+                setCookie('cookieConsent', 'accepted', 30);
+                document.getElementById('cookie-consent').style.display = 'none';
+                document.getElementById('overlay').style.display = 'none'
+            };
+
+            function setCookie(name, value, days) {
+                var expires = ""; if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
+
+            function getCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+        </script>
+        <!-- Cookie Consent Banner paragraph-->
+        <script>
+            document.getElementById("")
+            document.getElementById("learn-more").addEventListener("click", function (event) {
+                event.preventDefault(); // Prevent default link behavior
+                document.getElementById("cookies").style.display = "block";
+                document.getElementById("overlay").style.display = "block";
+            });
+
+            document.getElementById("close-modal").addEventListener("click", function () {
+                document.getElementById("cookies").style.display = "none";
+            });
+        </script>
+
+    </body>
+
+</html>

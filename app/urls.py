@@ -13,4 +13,5 @@ urlpatterns = [
     path('register', views.register, name="register"),
     path('register_english', views.register_english, name="register_english"),
     path('register_arabic', views.register_arabic, name="register_arabic"),
+    path('donate/', views.donate, name='donate'),
 ]

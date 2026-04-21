@@ -32,6 +32,11 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#home">Startseite</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#news">aktuelles</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#events">Angebote</a></li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-3 rounded" href="{% url 'donate' %}" >
+                                💛 Spenden
+                            </a>
+                        </li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Kontakt</a></li>
                         <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/templates/datenschutzerklärung.html">datenschutzerklärung</a></li> -->
                         <li class="nav-item mx-0 mx-lg-1 language-dropdown">
@@ -84,7 +89,7 @@
                     <!-- Portfolio Item 1-->
                     <div class="clo-12 clo-sm-8 col-md-6 col-lg-4 mb-4 d-flex">
                         <div class="portfolio-item mx-auto">
-                            <img src=" static/assets/logo.png" alt="logo">
+                            <img src="{% static 'assets/logo.png' %}" alt="logo">
                         </div>
                     </div>
                     <!-- Portfolio Item 2-->
@@ -159,12 +164,27 @@
             <div class="container">
                 <!-- Events Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-white">Angebote</h2>
-                <!-- Icon Divider-->
-                <!-- <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-cross"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div> -->
+
+
+                <div class="d-flex align-items-center justify-content-center"
+                    style="position: sticky; top: 80px; z-index: 1000; background-color: #99700a; padding: 10px 20px; border-radius: 50px; margin-bottom: 30px; gap: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                
+                    <p style="margin: 0; font-weight: 600; font-size: 1rem; color: white;">
+                        Folgt uns für aktuelle Ankündigungen:
+                    </p>
+                
+                    <div class="d-flex" style="gap: 10px;">
+                        <a class="btn btn-outline-light" target="_blank" href="https://www.instagram.com/baytna_berlin/"
+                            style="width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; padding: 0;">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a class="btn btn-outline-light" target="_blank" href="https://www.facebook.com/share/1A3eGGnE4k/"
+                            style="width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; padding: 0;">
+                            <i class="fab fa-fw fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+
                 <hr class="hr-titles">
                 <!-- Events Section Content-->
                 <div class="program-scroll-container">

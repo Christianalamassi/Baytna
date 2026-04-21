@@ -117,6 +117,43 @@ def register_english(request):
     return render(request, "register_english.html", context)
 
 
+def donate(request):
+    if request.method == "GET":
+        return render(request, "donate.html")
+
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+
+    amount = request.POST.get("amount")
+    custom_amount = request.POST.get("custom_amount")
+
+    # Convert to cents
+    if custom_amount:
+        amount = int(float(custom_amount) * 100)
+    elif amount:
+        amount = int(amount)
+    else:
+        amount = 1000  # default €10
+
+    session = stripe.checkout.Session.create(
+        payment_method_types=['card'],
+        line_items=[{
+            'price_data': {
+                'currency': 'eur',
+                'product_data': {
+                    'name': 'Spende Baytna',
+                },
+                'unit_amount': amount,
+            },
+            'quantity': 1,
+        }],
+        mode='payment',
+        success_url='http://127.0.0.1:8000/',
+        cancel_url='http://127.0.0.1:8000/donate/',
+    )
+
+    return redirect(session.url)
+
+
 @csrf_exempt
 def register_arabic(request):
     registers = Register.objects.all()
